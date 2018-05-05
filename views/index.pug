@@ -5,7 +5,7 @@ html
   body
     h1 Log in using Google Authorization
     <!-- GET? nie POST -->
-    form.log(action="/auth/google", method="GET")
+    form.log(action="/auth/google", method="POST")
       div
         label(for="email") E-mail
         input#email(type="email")
