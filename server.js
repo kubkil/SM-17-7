@@ -3,7 +3,14 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const config = require('./config');
 const app = express();
-const googleProfile = {};
+let googleProfile = {};
+
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
 
 passport.use(new GoogleStrategy({
     clientID: config.GOOGLE_CLIENT_ID,
